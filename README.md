@@ -2,6 +2,8 @@
 
 This project provides a fault localization framework using lightweight large language models (LLMs). It performs method-level fault localization on Defects4J using source code and comment embeddings.
 
+![Overview](overview.png)
+
 ---
 
 ## 🚀 Getting Started
