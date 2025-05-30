@@ -10,46 +10,41 @@ Follow the steps below to preprocess the data and run within-project and cross-p
 
 ---
 
-### ✅ Step 1: Data Preprocessing
+### ✅ Step 1: Data Preprocessing 
 
-**Description:**  
 For each buggy version in the `defects4j/` folder, the source code and comments of covered methods are embedded using an LLM. The resulting embeddings are stored in the `chunks/` directory.
 
-**Command:**
 ```bash
 python generate_embeddings_batch.py
+```
 
-
+---
 
 ### ✅ Step 2: Split Chunks
 
-**Description:**  
 Splits the all.pkl file saved in the chunks/ directory into separate files by project.
 
-**Command:**
 ```bash
 python split_projects.py
-
-
+```
+---
 
 ### ✅ Step 3:  Within-Project
 
-**Description:**  
 For each project, performs training and validation using a leave-one-out strategy.
 The results are saved in results/experiments.txt.
 
-**Command:**
 ```bash
 ./leave_one_out_project.sh
+```
 
+---
 
-
-### ✅ Step 4: Split Chunks
-
-**Description:**  
+### ✅ Step 4: Cross-Project
+ 
 Uses one project as the test set and the remaining projects as the training set.
 The results are saved in cross_results/experiments.txt.
 
-**Command:**
 ```bash
 ./cross_project.sh
+```
